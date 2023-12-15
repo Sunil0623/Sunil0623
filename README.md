@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Sunil0623
 - 👀 I’m interested in developing
-- 🌱 I’m currently learning web twchnologies
+- 🌱 I’m currently learning web technologies
 
 
 
