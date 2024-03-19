@@ -1,6 +1,7 @@
 - 👋 Hi, I’m @Sunil0623
 - 👀 I’m interested in developing
 - 🌱 I’m currently learning web technologies
+- I'm interested in android app development and web techs
 
 
 
