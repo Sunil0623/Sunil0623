@@ -1,0 +1,13 @@
+body {
+  padding-top: 50px;
+  background-image: url('/static/image/03.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  
+  background-size: auto;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
