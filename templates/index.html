@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+
+
+
+{% block title %}
+ASDetect
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='startpage.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ASDetect</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <p style="margin: right"><b>Login to take the test!!!</b></p>
+        <h1><b>Autism Disorder</b></h1>
+       
+        <p class="lead"><b>Why fit in when you were born to stand out?<br><br><br>Do you suspect that your child's feelings and behaviors involve autism? Many children who have milder forms of autism go undiagnosed until adulthood.<br><br><br>Autism is a developmental disorder characterized by difficulties with social interaction and communication, and by restricted and repetitive behavior.<br><br>A serious developmental disorder that impairs the ability to communicate and interact. <br><br><br>
+          According to the Centers for Disease Control, autism affects an estimated 1 in 54 children in the United States today.  <br><br><br>Early intervention can change a life.Research has made clear that high quality early intervention can improve learning, communication and social skills, as well as underlying brain development.<br><br><br>World Autism Awareness Day is an internationally recognized day on 2 April every year, encouraging Member States of the United Nations to take measures to raise awareness about people with autistic spectrum disorders including autism and Asperger syndrome throughout the world.</b></p><br>
+           <p style="margin: right"><b>Login to take the test!!!</b> <li><a href="{{ url_for('login') }}">Login</a></li> </p>
+      </div>
+
+    </div><!-- /.container -->
+{% endblock %}

@@ -1,0 +1,259 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard3.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ASDetect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <!--<li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>-->
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+          <!--<form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>-->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{ name }}</h1>
+
+         
+
+          <h2 class="sub-header">Fill the questionnaire</h2>
+          <div class="table-responsive">
+           
+            <div>
+  <form action="/result" method="POST">
+     <div>
+     
+     <table>
+     <tr>
+           <td>
+   <label for="gender">Select gender of the child</label></td><td>
+       <select id="gender" name="gender">
+         <option selected="selected">--Select answer--</option>
+         <option value="0">male</option>
+         <option value="1">female</option>
+       </select>
+       <br>
+       <br>
+       </td></tr>
+       <tr><td colspan="2"><br><br><br></td></tr>
+     <tr>
+           <td>
+   <label for="jaundice">Was the child born with jaundice</label></td><td>
+       <select id="jaundice" name="jaundice">
+         <option selected="selected">--Select answer--</option>
+         <option value="0">----Agree----</option>
+         <option value="1">---Disagree---</option>
+       </select>
+       <br>
+   <br>
+   </td></tr>
+   <tr><td colspan="2"><br><br><br></td></tr>
+     <tr>
+           <td>
+   <label for="famhis">family history (whether anyone in family has/had autism)</label></td><td>
+       <select id="famhis" name="famhis">
+         <option selected="selected">--Select answer--</option>
+         <option value="0">----Agree----</option>
+         <option value="1">---Disagree---</option>
+       </select>
+       <br>
+       <br>
+       </td></tr>
+       <tr><td colspan="2"><br><br><br></td></tr>
+     <tr>
+           <td>
+   <label for="who">Who is completing the test!!!</label></td><td>
+       <select id="who" name="who">
+         <option selected="selected">--Select answer--</option>
+         <option value="0">family member</option>
+         <option value="1">HealthCare Professional</option>
+           <option value="2">others</option>
+             <!--<option value="3"></option>-->
+       </select>
+       <br>
+        <br>
+        <br>
+
+       
+       <br>
+       </td></tr>
+     
+     </table>
+  </div>
+  
+  <div>
+    <table>
+    <br>
+    <br>
+      <tr>
+        <td>
+    <label for="a1">Does your child look at you when you call his/her name?</label></td><td>
+    <select id="a1" name="a1">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+     
+    </select>
+    <br>
+  </td></tr>
+  <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a2">How easy is it for you to get eye contact with your child? </label></td><td>
+    <select id="a2" name="edu">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+   
+    </select>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a3">Does your child point to indicate that s/he wants something? (e.g. a toy that is 
+out of reach) 
+</label></td><td>
+    <select id="a3" name="a3">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+     
+    </select>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a4">Does your child point to share interest with you? (e.g. pointing at an 
+interes9ng sight) 
+</label></td><td>
+    <select id="a4" name="a4">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+    
+    </select>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a5">Does your child pretend? (e.g. care for dolls, talk on a toy phone) </label></td><td>
+    <select id="a5" name="a5">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+     
+    </select>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a6">Does your child follow where you’re looking? </label></td><td>
+    <select id="a6" name="a6">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+     
+    </select>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a7">If you or someone else in the family is visibly upset, does your child show signs 
+of wanting to comfort them? (e.g. stroking hair, hugging them)
+</label></td><td>
+    <select id="a7" name="a7">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+    </select>
+    <br>
+    <br>
+     </td></tr>
+     <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a8">Would you describe your child’s first words as: </label></td><td>
+    <select id="a8" name="a8">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+    </select>
+    <br>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a9">Does your child use simple gestures? (e.g. wave goodbye) </label></td><td>
+    <select id="a9" name="a9">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+    </select>
+    <br>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="a10">Does your child stare at nothing with no apparent purpose? </label></td><td>
+    <select id="a10" name="a10">
+      <option selected="selected">--Select answer--</option>
+      <option value="0">----Agree----</option>
+      <option value="1">---Disagree---</option>
+    </select>
+    <br>
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+  <tr>
+        <td>
+    <label for="age">Enter Age of child (In months)</label></td><td>
+    <input type="text" id="age" name="age">
+    <br>
+    </td></tr>
+    <tr><td colspan="2"><br><br><br></td></tr>
+    </table>
+  <br>
+  <center><input type="submit" value="....Submit...."></center>
+    <div>
+  </form>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
